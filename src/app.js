@@ -2,6 +2,10 @@ const express = require('express');
 require("./db/connection")
 const cors = require('cors');
 
+if (process.env.NODE_ENV !== "production") {
+    require("dotenv").config();
+  }
+  
 const Blog = require("./models/Blog")
 
 const app = express()
