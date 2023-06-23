@@ -1,11 +1,13 @@
 const express = require('express');
 require("./db/connection")
+const cors = require('cors');
 
 const Blog = require("./models/Blog")
 
 const app = express()
 const port = process.env.PORT || 8000
 
+app.use(cors());
 app.use(express.json());
 
 // for adding blogs
